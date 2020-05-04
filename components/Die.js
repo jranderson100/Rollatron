@@ -15,25 +15,17 @@ class Die extends React.Component {
     
         this.state = { rolled: false, rollValue: null };
         this.rollDie = this.rollDie.bind(this);
-    }
+            }
 
 
-componentDidMount() {
     
-}
-    
-rollDie = (props) => {
+rollDie = props => {
     if(!this.state.rolled) {
 this.setState({rolled: !this.state.rolled});
      
-        let score = Math.floor(Math.random() * this.state.value) + 1;
-    
-    return score;  
-        
-        }
-    console.log(score)
+    }
 }
-    
+
 
     
     render () {
@@ -54,7 +46,7 @@ this.setState({rolled: !this.state.rolled});
                 
                     (
                    <div className="result">
-                    <p> You rolled a {this.score}! </p>            
+                    <p> You rolled a {Math.floor(Math.random() * value) + 1} </p>            
                     </div>
                     )
                 }   
@@ -66,5 +58,6 @@ this.setState({rolled: !this.state.rolled});
     }
     
 }
+
 
 export default Die;
